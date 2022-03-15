@@ -4,11 +4,7 @@ import UserItem from "./UserItem";
 import GithubContext from "../context/GitHub/GithubContext";
 
 function UserResult() {
-  const {users, isLoading, fetchUsers} =useContext(GithubContext)
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
+  const {users, isLoading} =useContext(GithubContext)
 
   const simplyUser = users.map(user => <UserItem key={user.id} user={user} />)
 
